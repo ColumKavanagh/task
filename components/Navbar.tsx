@@ -6,7 +6,7 @@ export default function Navbar() {
 
   //RETURN this to the UI
   return (
-    <header className="flex justify-center mt-5">
+    <header className="flex justify-center mt-4 mb-3">
       <nav className="flex justify-center flex-wrap w-1/4 rounded shadow-md bg-blue-400">
         <Link
           href="http://localhost:3000/"
