@@ -4,7 +4,7 @@ export default function Footer() {
   //COMPONENT LOGIC
   //RETURN this to the UI
   return (
-    <footer className="fixed bottom-0 left-0 w-full px-4 bg-blue-400 md:flex md:items-center md:justify-between md:p-4">
+    <footer className="fixed flex bottom-0 left-0 w-full justify-between px-4 bg-blue-400 items-center p-4">
       <ul className="flex flex-wrap text-sm font-medium text-white">
         <li className="hover:hover:bg-blue-500 rounded-full px-2 pb-1">
           <Link href={"/"}>Home</Link>

@@ -135,7 +135,7 @@
     "emailVerified": true,
     "dob": "1989-11-14",
     "company": { "name": "Ooba", "department": "Services" },
-    "skills": ["Training Delivery", "Nanotechnology", "Time &amp; Attendance"]
+    "skills": ["Training Delivery", "Nanotechnology", "Time & Attendance"]
   },
   {
     "id": 14,

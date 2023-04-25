@@ -13,8 +13,11 @@ export default function Custom404() {
   });
   return (
     <main>
-      <h1 className="flex justify-center mt-10">
-        That page does not exist so we are redirecting you!
+      <h1 className="flex justify-center font-sans font-semibold text-2xl mt-5">
+        Oops!
+      </h1>
+      <h1 className="flex justify-center font-sans text-2xl mb-16">
+        That page does not exist so we are redirecting you.
       </h1>
       <LoadSpinner />
     </main>

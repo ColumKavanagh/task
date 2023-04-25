@@ -11,19 +11,19 @@ const UserDetails: NextComponentType = (props: any) => {
 
   //RETURN this to the UI
   return (
-    <main className="flex w-auto flex-row flex-wrap justify-center items-center">
-      <div className="flex">
+    <main className="flex flex-wrap w-auto flex-row justify-center items-center">
+      <div className="flex flex-wrap">
         {props.id > 1 ? (
           <PreviousUser id={props.id} />
         ) : (
           <NextUser id={props.id} />
         )}
       </div>
-      <section className="flex flex-wrap justify-evenly w-2/3 md:max-w-6xl rounded-lg bg-white shadow-lg m-2 py-2">
-        <section className="flex w-1/2 justify-center items-center">
+      <section className="flex flex-wrap justify-evenly w-2/3 min-w-fit md:max-w-6xl rounded-lg bg-white shadow-lg m-2 py-2">
+        <div className="flex flex-wrap object-contain px-3 justify-center items-center">
           {props.avatar ? (
             <Image
-              className="object-contain w-64 "
+              className="w-64"
               src={props.avatar}
               width={100}
               height={100}
@@ -31,55 +31,56 @@ const UserDetails: NextComponentType = (props: any) => {
             />
           ) : (
             <Image
-              className="object-contain w-64 "
+              className="w-64"
               src="/no-avatar.png"
               width={100}
               height={100}
               alt={`A placeholder image of an avatar`}
             />
           )}
-        </section>
-        <section className="flex flex-col w-1/2 py-3">
-          <p className="text-black font-sans mb-2">
-            Name:&nbsp;
+        </div>
+        <div className="flex flex-wrap flex-col w-1/2 py-3">
+          <p className="text-black font-sans mt-2 mb-2">
+            Name:&nbsp;&nbsp;
             <b>
               {props.first_name} {props.last_name}
             </b>
           </p>
-          <p className="text-black font-sans mb-2">
-            Email:&nbsp;
-            <b>{props.email}</b>
-          </p>
+          <div className="flex items-center min-w-fit">
+            <p className="text-black font-sans mb-2">
+              Email:&nbsp;&nbsp;
+              <b>{props.email}</b>&nbsp;
+            </p>
+            <div>
+              {props.emailVerified ? (
+                <Image
+                  className="w-auto h-auto ml-2 mb-2 mr-2"
+                  src="/yes.png"
+                  width={18}
+                  height={18}
+                  alt={`An image of a tick indicating that the user's email is verified`}
+                />
+              ) : (
+                <Image
+                  className="w-auto h-auto ml-2 mb-2 mr-2"
+                  src="/no.png"
+                  width={18}
+                  height={18}
+                  alt={`An image of an X indicating that the user's email is not verified`}
+                />
+              )}
+            </div>
+          </div>
           <div className="flex">
             <p className="text-black font-sans mb-2">Born on&nbsp;</p>
             <FormatDate date={props.dob} />
           </div>
-          <div className="flex">
-            <p className="text-black font-sans mb-2">Email Verified?</p>
-            {props.emailVerified ? (
-              <Image
-                className="w-auto h-auto ml-2 mb-2"
-                src="/yes.png"
-                width={20}
-                height={20}
-                alt={`An image of a tick indicating that the user's email is verified`}
-              />
-            ) : (
-              <Image
-                className="w-auto h-auto ml-2 mb-2"
-                src="/no.png"
-                width={20}
-                height={20}
-                alt={`An image of an X indicating that the user's email is not verified`}
-              />
-            )}
-          </div>
-          <p className="text-black font-sans mb-2">
-            Company:&nbsp;
+          <p className="text-black font-sans mb-2 mt-5">
+            Company:&nbsp;&nbsp;
             <b>{props.company.name}</b>
           </p>
-          <p className="text-black font-sans mb-2">
-            Department:&nbsp;
+          <p className="text-black font-sans mb-3">
+            Department:&nbsp;&nbsp;
             <b>{props.company.department}</b>
           </p>
           <ul className="flex flex-wrap text-sm">
@@ -87,17 +88,17 @@ const UserDetails: NextComponentType = (props: any) => {
               return (
                 <li
                   key={props.skills.indexOf(skill)}
-                  className="flex bg-slate-300 rounded-full p-2 m-1"
+                  className="flex bg-slate-300 rounded-full p-2 mr-2 mb-2"
                 >
                   {skill}
                 </li>
               );
             })}
           </ul>
-          <h1 className="text-right font-bold text-5xl pr-8 rounded-full">{`#${props.id}`}</h1>
-        </section>
+          <h1 className="text-right font-bold text-5xl rounded-full">{`#${props.id}`}</h1>
+        </div>
       </section>
-      <div>
+      <div className="flex flex-wrap">
         {props.id < data.length ? (
           <NextUser id={props.id} />
         ) : (

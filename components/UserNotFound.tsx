@@ -9,18 +9,18 @@ export default function UserNotFound(props: any) {
   useEffect(() => {
     setTimeout(() => {
       router.push("/users");
-    }, 3000);
+    }, 3400);
   });
   //RETURN this to UI
   return (
-    <>
-      <main>
-        <h1 className="flex justify-center text-center mt-10">
-          Sorry, there is no such user! <br />
-          We are redirecting you back to the main user list.
-        </h1>
-        <LoadSpinner />
-      </main>
-    </>
+    <main>
+      <h1 className="flex justify-center font-sans font-semibold text-2xl mt-5">
+        Sorry, there is no such user!
+      </h1>
+      <h1 className="flex justify-center font-sans text-2xl mb-16">
+        We are redirecting you back to the main user list.
+      </h1>
+      <LoadSpinner />
+    </main>
   );
 }
