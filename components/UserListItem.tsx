@@ -7,7 +7,7 @@ export default function UserListItem(props: any) {
   //RETURN this to the UI
   return (
     <section className="flex justify-between w-1/3 bg-sky-200 shadow-lg p-3 m-2 rounded-lg">
-      <h4 className="font-sans font-bold text-lg text-gray-500 mt-1 ml-12">
+      <h4 className="font-sans font-bold text-lg text-black mt-1 ml-12">
         {props.first_name} {props.last_name}
       </h4>
       <div className="flex">

@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import LoadSpinner from "@/components/LoadSpinner";
+import Footer from "@/components/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   //LOGIC
@@ -33,11 +34,14 @@ export default function App({ Component, pageProps }: AppProps) {
 
   //RETURN this to the UI
   return (
-    <main>
+    <main className="mb-20">
+      {" "}
+      {/*This margin at the bottom ensures I don't cover content withthe sticky footer*/}
       {loading && <LoadSpinner />}
       {/*If loading is 'true', show the <Loader/>*/}
       <Navbar />
       <Component {...pageProps} />
+      <Footer />
     </main>
   );
 }

@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function PreviousUser(props: any) {
   //TYPE???
@@ -12,10 +13,16 @@ export default function PreviousUser(props: any) {
   //RETURN this to the UI
   return (
     <button
-      className="bg-blue-400 hover:bg-blue-500 text-white font-bold py-2 px-4 mr-8 rounded-full"
+      className="bg-blue-400 hover:bg-blue-500 p-4 m-4 rounded-full"
       onClick={previousUser}
     >
-      PREVIOUS
+      <Image
+        className="rounded-full mr-2"
+        src="/left-arrow.png"
+        width={40}
+        height={40}
+        alt={`An image of an arrow pointing to the left`}
+      />
     </button>
   );
 }
