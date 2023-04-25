@@ -1,6 +1,8 @@
-export default function LoadSpinner() {
+//Typescript Functional Component
+//FUNCTIONAL COMPONENT
+const LoadSpinner = (): JSX.Element => {
   //COMPONENT LOGIC
-
+  //
   //RETURN this to the UI
   return (
     <svg
@@ -20,4 +22,5 @@ export default function LoadSpinner() {
       />
     </svg>
   );
-}
+};
+export default LoadSpinner;

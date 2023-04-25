@@ -1,14 +1,29 @@
-import { NextComponentType } from "next";
+//Typescript Functional Component w/ Props
 import Image from "next/image";
 import FormatDate from "./FormatDate";
 import PreviousUser from "./PreviousUser";
 import NextUser from "./NextUser";
 import data from "../pages/api/users.json";
-
-const UserDetails: NextComponentType = (props: any) => {
-  //TYPE???
+//Relevant type for this component's props
+//First, create the 'Company' type that will feature in the 'UserDetailsProps' type
+type Company = {
+  name: string;
+  department: string;
+};
+type UserDetailsProps = {
+  first_name: string;
+  last_name: string;
+  id: number;
+  avatar: string;
+  email: string;
+  emailVerified: boolean;
+  dob: string;
+  company: Company;
+  skills: string[];
+};
+const UserDetails = (props: UserDetailsProps): JSX.Element => {
   //COMPONENT LOGIC
-
+  //
   //RETURN this to the UI
   return (
     <main className="flex flex-wrap w-auto flex-row justify-center items-center">
@@ -75,14 +90,16 @@ const UserDetails: NextComponentType = (props: any) => {
             <p className="text-black font-sans mb-2">Born on&nbsp;</p>
             <FormatDate date={props.dob} />
           </div>
-          <p className="text-black font-sans mb-2 mt-5">
-            Company:&nbsp;&nbsp;
-            <b>{props.company.name}</b>
-          </p>
-          <p className="text-black font-sans mb-3">
-            Department:&nbsp;&nbsp;
-            <b>{props.company.department}</b>
-          </p>
+          <div className="flex items-baseline min-w-fit mb-4">
+            <p className="text-black font-sans">
+              Company:&nbsp;
+              <b>{props.company.name}</b>&nbsp;&nbsp;
+            </p>
+            <p className="text-black font-sans">
+              Department:&nbsp;
+              <b>{props.company.department}</b>
+            </p>
+          </div>
           <ul className="flex flex-wrap text-sm">
             {props.skills.map((skill: string) => {
               return (
@@ -108,8 +125,4 @@ const UserDetails: NextComponentType = (props: any) => {
     </main>
   );
 };
-
-//If emailVerfied = true THEN image src= 'tick image' (in public folder) ELSE image src= 'X image'
-//{.map} through skills an use BULLET POINTS on them???
-
 export default UserDetails;

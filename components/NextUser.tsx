@@ -1,12 +1,15 @@
+//Typescript Functional Component w/ Props
 import Image from "next/image";
 import { useRouter } from "next/router";
-
-export default function NextUser(props: any) {
-  //TYPE???
+//Relevant type for this component's props
+type NextUserProps = {
+  id: number;
+};
+//FUNCTIONAL COMPONENT
+const NextUser = (props: NextUserProps): JSX.Element => {
   //COMPONENT LOGIC
   const id: number = props.id;
   const router = useRouter();
-
   const nextUser = () => {
     router.push("/users/" + (id + 1));
   };
@@ -25,4 +28,5 @@ export default function NextUser(props: any) {
       />
     </button>
   );
-}
+};
+export default NextUser;

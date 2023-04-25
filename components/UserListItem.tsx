@@ -1,9 +1,14 @@
+//Typescript Functional Component w/ Props
 import Link from "next/link";
-
-export default function UserListItem(props: any) {
-  //TYPE???
+//Relevant type for this component's props
+type UserListItemProps = {
+  first_name: string;
+  last_name: string;
+  id: number;
+};
+const UserListItem = (props: UserListItemProps): JSX.Element => {
   //COMPONENT LOGIC
-
+  //
   //RETURN this to the UI
   return (
     <section className="flex justify-between min-w-fit w-1/3 bg-sky-200 shadow-lg p-3 m-2 rounded-lg">
@@ -19,4 +24,5 @@ export default function UserListItem(props: any) {
       </div>
     </section>
   );
-}
+};
+export default UserListItem;

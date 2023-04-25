@@ -1,11 +1,16 @@
 //This is the  '/users' URL page
 import axios from "@/lib/axios";
 import User from "@/lib/userType";
-import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next";
+import {
+  GetServerSideProps,
+  InferGetServerSidePropsType,
+  InferGetStaticPropsType,
+  NextPage,
+} from "next";
 import UserListItem from "@/components/UserListItem";
 
 //getStaticProps
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   try {
     const response: any = await axios.get("/users");
     const data: User[] = response.data;
@@ -22,7 +27,7 @@ export const getStaticProps: GetStaticProps = async () => {
 ///FUNCTIONAL COMPONENT
 const AllUsersPage: NextPage = ({
   users,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   //RETURN this to UI
   return (
     <>

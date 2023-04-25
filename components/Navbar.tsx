@@ -1,9 +1,9 @@
+//Typescript Functional Component
 import Link from "next/link";
-
-export default function Navbar() {
-  //TYPE???
+//FUNCTIONAL COMPONENT
+const Navbar = (): JSX.Element => {
   //COMPONENT LOGIC
-
+  //
   //RETURN this to the UI
   return (
     <header className="flex justify-center mt-4 mb-3 ">
@@ -23,4 +23,5 @@ export default function Navbar() {
       </nav>
     </header>
   );
-}
+};
+export default Navbar;

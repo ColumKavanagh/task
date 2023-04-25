@@ -1,7 +1,9 @@
+//Typescript Functional Component
 import Link from "next/link";
-
-export default function Footer() {
+//FUNCTIONAL COMPONENT
+const Footer = (): JSX.Element => {
   //COMPONENT LOGIC
+  //
   //RETURN this to the UI
   return (
     <footer className="fixed flex bottom-0 left-0 w-full justify-between px-4 bg-blue-400 items-center p-4">
@@ -23,4 +25,5 @@ export default function Footer() {
       </span>
     </footer>
   );
-}
+};
+export default Footer;

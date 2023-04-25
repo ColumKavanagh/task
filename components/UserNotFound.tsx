@@ -1,10 +1,11 @@
+//Typescript Functional Component
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import Message from "@/components/Message";
 import LoadSpinner from "./LoadSpinner";
-export default function UserNotFound(props: any) {
-  //TYPE???
+//FUNCTIONAL COMPONENT
+const UserNotFound = (): JSX.Element => {
   //COMPONENT LOGIC
-  console.log("User not found");
   const router = useRouter();
   useEffect(() => {
     setTimeout(() => {
@@ -14,13 +15,12 @@ export default function UserNotFound(props: any) {
   //RETURN this to UI
   return (
     <main>
-      <h1 className="flex justify-center font-sans font-semibold text-2xl mt-5">
-        Sorry, there is no such user!
-      </h1>
-      <h1 className="flex justify-center font-sans text-2xl mb-16">
-        We are redirecting you back to the main user list.
-      </h1>
+      <Message
+        line1="Sorry, there is no such user!"
+        line2="We are redirecting you back to the main user list."
+      />
       <LoadSpinner />
     </main>
   );
-}
+};
+export default UserNotFound;
