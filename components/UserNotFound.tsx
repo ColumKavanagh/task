@@ -16,7 +16,7 @@ const UserNotFound = (): JSX.Element => {
   return (
     <main>
       <Message
-        line1="Sorry, there is no such user!"
+        line1="User Not Found"
         line2="We are redirecting you back to the main user list."
       />
       <LoadSpinner />

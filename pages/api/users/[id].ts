@@ -5,8 +5,8 @@ import User from "@/lib/userType";
 const allUsers: User[] = data;
 
 //Making the backend endpoint for the HTTP 'GET' request to '/users/:id'
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  //Get the user whos ID i equal to that passed in the URL
+const handler = (req: NextApiRequest, res: NextApiResponse) => {
+  //Get the user whos ID is equal to the one passed in the URL
   if (req.method === "GET") {
     const { id } = req.query; //pull ID from the request query as a STRING
     if (typeof id !== "string") {
@@ -29,4 +29,5 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       .status(405)
       .end(`Method ${req.method} is not allowed for this endpoint.`); //Will send the request and say that POST, PUT or DELETE requests are not allowed for this endpoint
   }
-}
+};
+export default handler;

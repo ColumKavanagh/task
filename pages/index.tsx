@@ -6,9 +6,9 @@ const HomePage = (): JSX.Element => {
       <h1 className="flex justify-center text-center font-sans font-semibold text-4xl m-10">
         Next.js task
       </h1>
-      <h1 className="flex justify-center font-sans text-3xl -mt-5 mb-16">
+      <h2 className="flex justify-center font-sans text-3xl -mt-5 mb-16">
         Colum Kavanagh
-      </h1>
+      </h2>
       <section className="flex justify-center">
         <Image
           className="rounded-full"

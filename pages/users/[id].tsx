@@ -1,7 +1,6 @@
 //This is the  '/users/:id' URL page
 import axios from "@/lib/axios";
 import User from "@/lib/userType";
-import { GetServerSideProps } from "next";
 import UserNotFound from "@/components/UserNotFound";
 import UserDetails from "@/components/UserDetails";
 import { InferGetServerSidePropsType } from "next";
