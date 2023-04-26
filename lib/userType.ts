@@ -1,7 +1,7 @@
 //Creating the 'User' type so that typescript can type-check as I am pulling in users from the API
 export default interface User {
   id: number;
-  avatar?: string;
+  avatar?: string; //This means avatar is an OPTIONAL attribute
   first_name: string;
   last_name: string;
   email: string;

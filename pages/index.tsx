@@ -1,7 +1,6 @@
-import { NextPage } from "next";
+//The 'Home' page of the application
 import Image from "next/image";
-//Using NextPage from next.js as the Type for Typscript type-checking
-const HomePage: NextPage = () => {
+const HomePage = (): JSX.Element => {
   return (
     <main>
       <h1 className="flex justify-center text-center font-sans font-semibold text-4xl m-10">

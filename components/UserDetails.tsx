@@ -14,13 +14,14 @@ type UserDetailsProps = {
   first_name: string;
   last_name: string;
   id: number;
-  avatar: string;
+  avatar?: string | undefined;
   email: string;
   emailVerified: boolean;
   dob: string;
   company: Company;
   skills: string[];
 };
+//FUNCTIONAL COMPONENT
 const UserDetails = (props: UserDetailsProps): JSX.Element => {
   //COMPONENT LOGIC
   //

@@ -1,10 +1,10 @@
-//This page triggers when the browser gets a 4040 from the applcation
+//This page triggers when the browser gets a 404 from the applcation
 import LoadSpinner from "@/components/LoadSpinner";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Message from "@/components/Message";
-
-export default function Custom404() {
+//
+const Custom404 = (): JSX.Element => {
   console.log("Using Custom404");
   const router = useRouter();
   useEffect(() => {
@@ -21,4 +21,5 @@ export default function Custom404() {
       <LoadSpinner />
     </main>
   );
-}
+};
+export default Custom404;

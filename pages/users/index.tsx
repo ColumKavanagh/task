@@ -1,16 +1,11 @@
 //This is the  '/users' URL page
 import axios from "@/lib/axios";
 import User from "@/lib/userType";
-import {
-  GetServerSideProps,
-  InferGetServerSidePropsType,
-  InferGetStaticPropsType,
-  NextPage,
-} from "next";
+import { InferGetServerSidePropsType } from "next";
 import UserListItem from "@/components/UserListItem";
 
-//getStaticProps
-export const getServerSideProps: GetServerSideProps = async () => {
+//getServerSideProps to get the props evey time a request is made to th server
+export const getServerSideProps = async () => {
   try {
     const response: any = await axios.get("/users");
     const data: User[] = response.data;
@@ -24,10 +19,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }
 };
 
+//Relevant type for this component's props... using 'InferGetServerSidePropsType<typeof getServerSideProps>'
+
 ///FUNCTIONAL COMPONENT
-const AllUsersPage: NextPage = ({
+const AllUsersPage = ({
   users,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+}: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element => {
   //RETURN this to UI
   return (
     <>

@@ -12,14 +12,16 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     if (typeof id !== "string") {
       throw new Error("Query param 'id' has to be of type string."); //Typescript wouldn't let me work with 'id' until I checked it liked this!!!
     }
-    //Now the logic for dealing with the 'id' parameter
-    if (parseInt(id) <= allUsers.length) {
-      const data = allUsers.find((user) => user.id === parseInt(id));
+    //Now the logic for dealing with the 'id' parameter (First, turn the ID string from req.query into a number using 'Number(id)')
+    if (Number(id) <= allUsers.length) {
+      const data: User | undefined = allUsers.find(
+        (user) => user.id === Number(id)
+      );
       res.status(200).json(data);
 
-      //If the user types in an ID in the URL that is not an existing user id then...
-    } else if (isNaN(parseInt(id)) || parseInt(id) > allUsers.length) {
-      const data = null;
+      //If the user types in an ID in the URL that is not an existing user id then we send back 'null' in the response
+    } else if (isNaN(Number(id)) || Number(id) > allUsers.length) {
+      const data: null = null;
       res.status(200).json(data);
     }
   } else {

@@ -10,7 +10,7 @@ const UserNotFound = (): JSX.Element => {
   useEffect(() => {
     setTimeout(() => {
       router.push("/users");
-    }, 3400);
+    }, 3500);
   });
   //RETURN this to UI
   return (

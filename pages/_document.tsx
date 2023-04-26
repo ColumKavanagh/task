@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-export default function Document() {
+const Document = (): JSX.Element => {
   return (
     <Html lang="en" className="overflow-x-hidden">
       <Head />
@@ -12,4 +12,5 @@ export default function Document() {
       </body>
     </Html>
   );
-}
+};
+export default Document;

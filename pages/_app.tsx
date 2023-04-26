@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import LoadSpinner from "@/components/LoadSpinner";
 import Footer from "@/components/Footer";
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   //LOGIC
   //Using the Loading Spinner throughou the App
   const router = useRouter();
@@ -44,4 +44,5 @@ export default function App({ Component, pageProps }: AppProps) {
       <Footer />
     </main>
   );
-}
+};
+export default App;
