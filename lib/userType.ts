@@ -6,7 +6,12 @@ export default interface User {
   last_name: string;
   email: string;
   emailVerified: boolean;
-  dob: string;
-  company: { name: string; department: string };
+  dob: Date;
+  company: Company;
   skills: string[];
+}
+
+export interface Company {
+  name: string;
+  department: string;
 }

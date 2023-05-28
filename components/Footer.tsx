@@ -6,12 +6,12 @@ const Footer = (): JSX.Element => {
   //
   //RETURN this to the UI
   return (
-    <footer className="fixed flex bottom-0 left-0 w-full justify-between px-4 bg-blue-400 items-center p-4">
+    <footer className="fixed bottom-0 left-0 flex w-full items-center justify-between bg-blue-400 p-4 px-4">
       <ul className="flex flex-wrap text-sm font-medium text-white">
-        <li className="hover:hover:bg-blue-500 rounded-full px-2 pb-1">
+        <li className="rounded-full px-2 pb-1 hover:hover:bg-blue-500">
           <Link href={"/"}>Home</Link>
         </li>
-        <li className="hover:hover:bg-blue-500 rounded-full px-2 pb-1">
+        <li className="rounded-full px-2 pb-1 hover:hover:bg-blue-500">
           <Link href={"/users"}>Users</Link>
         </li>
       </ul>

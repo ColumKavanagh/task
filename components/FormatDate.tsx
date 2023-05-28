@@ -1,5 +1,8 @@
 //Typescript Functional Component w/ Props
 //Relevant type for this component's props
+
+//Use LIBRARY with dates!!!!!!
+
 type FormatDateProps = {
   date: string;
 };

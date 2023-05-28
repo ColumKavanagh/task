@@ -6,6 +6,7 @@ import UserListItem from "@/components/UserListItem";
 
 //getServerSideProps to get the props evey time a request is made to th server
 export const getServerSideProps = async () => {
+  //this runs on SERVER!!!
   try {
     const response: any = await axios.get("/users");
     const data: User[] = response.data;

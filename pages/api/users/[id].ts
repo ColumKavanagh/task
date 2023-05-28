@@ -19,10 +19,14 @@ const handler = (req: NextApiRequest, res: NextApiResponse) => {
       );
       res.status(200).json(data);
 
+      //Add error check for data being undefined... (404)
+
+      //Assuming data IDs are sequential...... Instead, look for ID in a data.id array!!! Then return.
+
       //If the user types in an ID in the URL that is not an existing user id then we send back 'null' in the response
     } else if (isNaN(Number(id)) || Number(id) > allUsers.length) {
       const data: null = null;
-      res.status(200).json(data);
+      res.status(200).json(data); //Should be 400 (for Nan in this case)
     }
   } else {
     res

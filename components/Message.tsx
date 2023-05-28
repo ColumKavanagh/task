@@ -12,10 +12,10 @@ const Message = (props: MessageProps): JSX.Element => {
   //RETURN this to the UI
   return (
     <main>
-      <p className="flex justify-center font-sans font-semibold text-2xl mt-5">
+      <p className="mt-5 flex justify-center font-sans text-2xl font-semibold">
         {props.line1}
       </p>
-      <p className="flex justify-center font-sans text-2xl mb-16">
+      <p className="mb-16 flex justify-center font-sans text-2xl">
         {props.line2}
       </p>
     </main>

@@ -6,17 +6,17 @@ const Navbar = (): JSX.Element => {
   //
   //RETURN this to the UI
   return (
-    <header className="flex justify-center mt-4 mb-3 ">
-      <nav className="flex justify-center w-1/4 min-w-fit rounded shadow-md bg-blue-400">
+    <header className="mb-3 mt-4 flex justify-center ">
+      <nav className="flex w-1/4 min-w-fit justify-center rounded bg-blue-400 shadow-md">
         <Link
           href="http://localhost:3000/"
-          className="font-sans text-white text-lg font-semibold hover:hover:bg-blue-500 rounded-full p-3 m-3"
+          className="m-3 rounded-full p-3 font-sans text-lg font-semibold text-white hover:hover:bg-blue-500"
         >
           Home
         </Link>
         <Link
           href="http://localhost:3000/users"
-          className="font-sans text-white text-lg font-semibold hover:hover:bg-blue-500 rounded-full p-3 m-3"
+          className="m-3 rounded-full p-3 font-sans text-lg font-semibold text-white hover:hover:bg-blue-500"
         >
           Users
         </Link>
